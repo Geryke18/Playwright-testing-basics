@@ -1,0 +1,28 @@
+{
+  "name": "playwright-testing-basics",
+  "version": "1.0.0",
+  "description": "Building the fundation of a UI and API testing system using Playwright.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Geryke18/Playwright-testing-basics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Geryke18/Playwright-testing-basics/issues"
+  },
+  "homepage": "https://github.com/Geryke18/Playwright-testing-basics#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.1",
+    "eslint": "^10.3.0",
+    "globals": "^17.6.0",
+    "jiti": "^2.7.0",
+    "typescript-eslint": "^8.59.2"
+  }
+}
