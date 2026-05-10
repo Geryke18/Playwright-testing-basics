@@ -1,6 +1,8 @@
 import { test, expect } from '../../fixtures';
 import payload from '../../data/petStorePayload.json';
 
+payload.id = Date.now();  // to avoid Race Condition in paralel test run
+
 test('get pet by existing ID', async ({ petController }) => {
   await petController.createPet(payload); // create the pet to make sure it exists
   const response = await petController.getPet(payload.id);

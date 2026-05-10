@@ -1,6 +1,8 @@
 import { test, expect } from '../../fixtures';
 import payload from '../../data/petStorePayload.json';
 
+payload.id = Date.now();  // to avoid Race Condition in paralel test run
+
 test('with required fields', async ({ petController }) => {
   const payload2 = {
     name: "Oscar",
