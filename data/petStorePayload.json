@@ -1,0 +1,19 @@
+{
+  "id": 345321,
+  "category": {
+    "id": 0,
+    "name": "pug"
+  },
+  "name": "Oscar",
+  "photoUrls": [
+    "https://www.grandopet.hu/upload_files/filemanager/fajtaleiras/mopsz/mopsz%20k%C3%B6ly%C3%B6k%201.jpg",
+    "https://dogx.hu/wp-content/uploads/2023/03/Melyek-a-Mopsz-legfontosabb-tulajdonsagai.jpg"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "cute"
+    }
+  ],
+  "status": "available"
+}
