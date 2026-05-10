@@ -12,7 +12,7 @@ After cloning the repository go to the project's root directory (Playwright-test
 ```
 npm install
 
-npx playwright install
+npx playwright install --with-deps  // in case of any browser related issue
 ```
 
 Run all the tests:
