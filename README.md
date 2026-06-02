@@ -7,12 +7,20 @@ nodeJS v20.x - https://nodejs.org/en/download/prebuilt-installer
 ### VS Code Playwright Extension:
 If you use VS Code, I highly recommend downloading and using this extension. It provides an excellent development experience for writing, running, and debugging tests.
 
-## Usage:
-After cloning the repository go to the project's root directory (Playwright-testing-basics) and run the following commands from the command line
+## Installation & Usage:
+After cloning/downloading the repository go to the project's root directory (playwright-test-assessment) in the command line
+```bash
+cd playwright-test-assessment
 ```
-npm install
 
-npx playwright install --with-deps  // in case of any browser related issue
+Run the following command to install dependencies:
+```bash
+npm install
+```
+
+In case of any browser related issue:
+```bash
+npx playwright install --with-deps
 ```
 
 Run all the tests:

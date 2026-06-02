@@ -10,11 +10,11 @@ export class HeaderPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.shoppingCartBtn = page.locator('[data-test="shopping-cart-link"]');
-    this.shoppingCartBadge =  page.locator('[data-test="shopping-cart-badge"]');
+    this.shoppingCartBtn = page.getByTestId('shopping-cart-link');
+    this.shoppingCartBadge =  page.getByTestId('shopping-cart-badge');
     this.menuBtn =  page.getByRole('button', { name: 'Open Menu' });
-    this.logoutBtn =  page.locator('[data-test="logout-sidebar-link"]');
-    this.goToProductsBtn =  page.locator('[data-test="inventory-sidebar-link"]');
+    this.logoutBtn =  page.getByTestId('logout-sidebar-link');
+    this.goToProductsBtn =  page.getByTestId('inventory-sidebar-link');
   }
 
   async logout(){

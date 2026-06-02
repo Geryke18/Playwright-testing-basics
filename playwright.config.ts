@@ -27,6 +27,9 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     baseURL: 'https://petstore.swagger.io/v2/',
+    
+    // for .getByTestId()
+    testIdAttribute: 'data-test',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -35,18 +38,57 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'chromiumAPI',
+      testMatch: /API\\.*\.spec\.ts/,
+      use: { ...devices['Desktop Chrome']},
     },
 
     {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      name: 'firefoxAPI',
+      testMatch: /API\\.*\.spec\.ts/,
+      use: { ...devices['Desktop Firefox']},
     },
 
     {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      name: 'webkitAPI',
+      testMatch: /API\\.*\.spec\.ts/,
+      use: { ...devices['Desktop Safari']},
+    },
+
+    { name: 'setup',
+      testMatch: /.*\.setup\.ts/,
+      use: {
+        baseURL: 'https://www.saucedemo.com/',
+      }
+    },
+    {
+      name: 'chromiumUI',
+      testMatch: /UI\\.*\.spec\.ts/,
+      use: { ...devices['Desktop Chrome'],
+        storageState: 'playwright/.auth/user.json',
+        baseURL: 'https://www.saucedemo.com/',
+      },
+      dependencies: ['setup'],
+    },
+
+    {
+      name: 'firefoxUI',
+      testMatch: /UI\\.*\.spec\.ts/,
+      use: { ...devices['Desktop Firefox'],
+        storageState: 'playwright/.auth/user.json',
+        baseURL: 'https://www.saucedemo.com/',
+      },
+      dependencies: ['setup'],
+    },
+
+    {
+      name: 'webkitUI',
+      testMatch: /UI\\.*\.spec\.ts/,
+      use: { ...devices['Desktop Safari'],
+        storageState: 'playwright/.auth/user.json',
+        baseURL: 'https://www.saucedemo.com/',
+      },
+      dependencies: ['setup'],
     },
 
     /* Test against mobile viewports. */

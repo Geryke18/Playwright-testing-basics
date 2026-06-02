@@ -14,8 +14,8 @@ export class CartPage {
     this.page = page;
     this.headerPage = new HeaderPage(page);
     this.productsPage = new ProductsPage(page);
-    this.inventoryItems =  page.locator('[data-test="inventory-item"]');  // array
-    this.continueShoppingBtn =  page.locator('[data-test="continue-shopping"]');
+    this.inventoryItems =  page.getByTestId('inventory-item');
+    this.continueShoppingBtn =  page.getByTestId('continue-shopping');
   }
 
   async addToCartAndCheck(productName: string) {

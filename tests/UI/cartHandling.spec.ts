@@ -1,6 +1,10 @@
 import { test, expect } from '../../fixtures';
 import products from '../../data/souceDemoProducts.json';
 
+test.beforeEach(async ({ productsPage }) => {
+  await productsPage.goto();
+});
+
 test('add than remove all items', async ({ cartPage }) => {
   for (const product of products.inventory) {
     await cartPage.addToCartAndCheck(product.name);
